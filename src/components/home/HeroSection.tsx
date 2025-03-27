@@ -264,7 +264,7 @@ Terkirim melalui: Website Ikmal Plafon`
                 className="w-full bg-primary text-white px-6 py-4 font-medium rounded-sm hover:bg-secondary hover:text-primary transition-colors duration-300 flex items-center justify-center group"
               >
                 <i className="fab fa-whatsapp mr-2 text-xl"></i>
-                Minta Penawaran via WhatsApp
+                Minta Penawaran
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>

@@ -36,7 +36,7 @@ const ServiceCard = ({
         <Image 
           src={image} 
           alt={title}
-          fill 
+          fill={true}
           style={{ objectFit: 'cover' }}
           className="transition-all duration-700 group-hover:scale-110"
         />

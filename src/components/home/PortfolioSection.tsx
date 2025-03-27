@@ -68,7 +68,7 @@ const GalleryLightbox = ({
           <Image 
             src={currentImage.src} 
             alt={currentImage.title}
-            fill
+            fill={true}
             style={{ objectFit: 'contain' }}
           />
         </div>
@@ -104,7 +104,7 @@ const PortfolioItemImage = ({
         <Image 
           src={image} 
           alt={title}
-          fill
+          fill={true}
           style={{ objectFit: 'cover' }}
         />
       </div>

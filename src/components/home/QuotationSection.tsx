@@ -1,7 +1,7 @@
 // components/home/QuotationSection.tsx
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import AnimatedHeadline from '../ui/AnimatedHeadline'
 import Link from 'next/link'
@@ -9,6 +9,7 @@ import Link from 'next/link'
 const QuotationSection = () => {
   // State untuk mengontrol modal video
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)
+  const modalRef = useRef<HTMLDivElement>(null)
   
   // Fungsi untuk modal video
   const openVideoModal = () => setIsVideoModalOpen(true)
@@ -27,6 +28,38 @@ const QuotationSection = () => {
     'Proses pengerjaan cepat & rapi',
     'Tenaga ahli berpengalaman'
   ]
+
+  // Menambahkan event listener untuk key press (ESC)
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isVideoModalOpen) {
+        closeVideoModal()
+      }
+    }
+
+    // Menambahkan event listener untuk click di luar modal
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node) && isVideoModalOpen) {
+        closeVideoModal()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    document.addEventListener('mousedown', handleClickOutside)
+
+    // Disable scroll saat modal terbuka
+    if (isVideoModalOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.body.style.overflow = 'auto'
+    }
+  }, [isVideoModalOpen])
 
   return (
     <section className="py-24 px-4">
@@ -106,19 +139,21 @@ const QuotationSection = () => {
         </div>
       </div>
 
-      {/* Video Modal */}
+      {/* Video Modal - dengan improvisasi untuk mobile */}
       {isVideoModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75">
-          <div className="relative bg-white w-full max-w-4xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75 transition-opacity duration-300 ease-in-out">
+          <div ref={modalRef} className="relative bg-white w-full max-w-4xl rounded shadow-xl transition-transform duration-300 ease-in-out transform scale-100">
+            {/* Tombol close yang sudah dioptimasi - selalu di pojok kanan atas */}
             <button 
               onClick={closeVideoModal}
-              className="absolute top-0 right-0 -mt-10 -mr-10 text-white text-2xl p-2 z-10"
+              className="absolute top-0 right-0 w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full z-10 transform translate-x-1/2 -translate-y-1/2 hover:bg-secondary hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-secondary"
+              aria-label="Tutup video"
             >
-              <i className="fas fa-times"></i>
+              <i className="fas fa-times text-lg"></i>
             </button>
             
-            <div className="aspect-w-16 aspect-h-9">
-              {/* Video Player */}
+            <div className="aspect-w-16 aspect-h-9 w-full overflow-hidden rounded">
+              {/* Video Player dengan loading indicator */}
               {videoUrl.includes('youtube.com') ? (
                 <iframe 
                   src={videoUrl} 
@@ -128,13 +163,17 @@ const QuotationSection = () => {
                   className="w-full h-full"
                 ></iframe>
               ) : (
-                <video 
-                  src={videoUrl} 
-                  controls 
-                  className="w-full h-full"
-                >
-                  Your browser does not support the video tag.
-                </video>
+                <div className="w-full h-full relative">
+                  <video 
+                    src={videoUrl} 
+                    controls 
+                    className="w-full h-full"
+                    autoPlay
+                    playsInline
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
               )}
             </div>
           </div>

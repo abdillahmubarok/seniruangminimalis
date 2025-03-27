@@ -10,14 +10,14 @@ const CallToAction = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-1 flex flex-col justify-center animate-fade-in-up">
             <span className="text-secondary text-sm tracking-wider uppercase">
-              Lets Started
+              Wujudkan Ruangan Impian Anda
             </span>
             
             <AnimatedHeadline 
-              beforeText="Ready To Have"
-              highlightedText="New House"
-              rotatingText={["Better", "Bigger", "Faster"]}
-              afterText="Design"
+              beforeText="Desain"
+              highlightedText="Interior Minimalis"
+              rotatingText={["Elegan", "Estetik", "Fungsional"]}
+              afterText="Untuk Anda"
               className="text-3xl md:text-4xl animate-fade-in-up"
               tag="h2"
             />
@@ -29,36 +29,38 @@ const CallToAction = () => {
             {/* Package 1 */}
             <div className="animate-fade-in-up">
               <div className="mb-6">
-                <i className="fas fa-box-open text-4xl text-primary"></i>
+                <i className="fas fa-ruler-combined text-4xl text-primary"></i>
               </div>
-              <h4 className="text-2xl font-bold mb-4">25 + Flexible Package</h4>
+              <h4 className="text-2xl font-bold mb-4">Layanan Komprehensif</h4>
               <p className="mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, 
-                luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                Kami menawarkan berbagai solusi interior mulai dari Plafon Gypsum, Wall Panel, 
+                Backdrop TV, Kitchen Set, hingga Partisi dengan pilihan model dan warna terlengkap.
               </p>
               <Link 
-                href="/packages"
-                className="inline-block font-semibold text-primary hover:underline transition-all duration-300 hover:translate-y-1"
+                href="/services"
+                className="inline-block bg-primary text-white px-6 py-3 font-medium hover:bg-secondary transition-colors duration-300 hover:translate-y-1"
               >
-                View Package
+                Lihat Layanan Kami
               </Link>
             </div>
             
             {/* Package 2 */}
             <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <div className="mb-6">
-                <i className="fas fa-headset text-4xl text-secondary"></i>
+                <i className="fas fa-home text-4xl text-secondary"></i>
               </div>
-              <h4 className="text-2xl font-bold mb-4">Live Talk With Us</h4>
+              <h4 className="text-2xl font-bold mb-4">Konsultasi & Survei Gratis</h4>
               <p className="mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, 
-                luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                Dapatkan konsultasi desain dan survei pengukuran ke lokasi secara gratis. 
+                Tim berpengalaman kami siap membantu mewujudkan ruangan impian Anda dengan proses 
+                pengerjaan yang cepat dan rapi.
               </p>
               <Link 
-                href="/contact"
+                href="https://wa.me/6285643132938"
                 className="inline-block bg-primary text-white px-6 py-3 font-medium hover:bg-secondary transition-colors duration-300 hover:translate-y-1"
+                target="_blank"
               >
-                Get a Quotation
+                Hubungi Kami Sekarang
               </Link>
             </div>
           </div>

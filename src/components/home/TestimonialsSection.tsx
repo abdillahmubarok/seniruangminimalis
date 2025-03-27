@@ -102,7 +102,7 @@ const TestimonialsSection = () => {
                     <Image 
                       src={testimonial.image} 
                       alt={testimonial.name}
-                      fill
+                      fill={true}
                       style={{ objectFit: 'cover' }}
                     />
                   </div>

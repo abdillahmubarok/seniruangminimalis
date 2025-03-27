@@ -88,7 +88,7 @@ const Footer = () => {
                     <Image 
                       src={`/images/instagram-${item}.jpg`} 
                       alt={`Instagram post ${item}`}
-                      fill
+                      fill={true}
                       style={{ objectFit: 'cover' }}
                     />
                     <div className="absolute inset-0 bg-secondary bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
