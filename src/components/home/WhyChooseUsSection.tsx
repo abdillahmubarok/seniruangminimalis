@@ -67,8 +67,8 @@ const WhyChooseUsSection = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Left Column - Image with Background */}
                     <div className="relative">
-                        <div className="bg-primary p-6 md:p-10 relative z-10 ml-6 md:ml-10 h-[500px] md:h-[600px] mt-6 md:mt-10">
-                            <div className="absolute top-0 left-0 transform -translate-x-6 md:-translate-x-10 -translate-y-6 md:-translate-y-10 w-full h-full">
+                        <div className="bg-primary p-6 md:p-10 relative z-10 mr-6 md:mr-10 h-[500px] md:h-[600px] mt-6 md:mt-10">
+                            <div className="absolute top-0 right-0 transform translate-x-6 md:translate-x-10 -translate-y-6 md:-translate-y-10 w-full h-full">
                                 <Image
                                     src="/images/section/pexels-fotoaibe-1571470.jpg"
                                     alt="Interior modern SENI RUANG MINIMALIS PEKALONGAN"
