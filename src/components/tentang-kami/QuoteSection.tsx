@@ -30,18 +30,20 @@ const QuoteSection = () => {
                         >
                             <i className="fas fa-quote-right"></i>
                         </motion.div>
-                        
+
                         <motion.h2
                             initial={{ opacity: 0 }}
                             animate={inView ? { opacity: 1 } : { opacity: 0 }}
                             transition={{ duration: 0.7, delay: 0.5 }}
                             className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 leading-tight max-w-2xl"
                         >
-                            " Perbarui Interior Rumah Anda & Dapatkan Kehidupan yang Lebih Baik "
+                            " Perbarui Interior Anda, Dapatkan Kehidupan yang Lebih Baik "
                         </motion.h2>
-                        
+
                         <div className="flex justify-start">
-                            <div className="w-24 h-1 bg-secondary zigzag-divider"></div>
+                            <svg width="96" height="12" viewBox="0 0 96 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 12L8 0L16 12L24 0L32 12L40 0L48 12L56 0L64 12L72 0L80 12L88 0L96 12" stroke="#FABB51" strokeWidth="2" strokeLinecap="square" />
+                            </svg>
                         </div>
                     </motion.div>
                 </div>

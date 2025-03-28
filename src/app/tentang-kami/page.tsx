@@ -2,11 +2,11 @@
 import React from 'react';
 import PageHeader from '@/components/ui/PageHeader';
 import AboutSection from '@/components/home/AboutSection';
-import BusinessFeaturesSection from '@/components/about/BusinessFeaturesSection';
-import BusinessOverviewSection from '@/components/about/BusinessOverviewSection';
-import QuoteSection from '@/components/about/QuoteSection';
+import BusinessFeaturesSection from '@/components/tentang-kami/BusinessFeaturesSection';
+import BusinessOverviewSection from '@/components/tentang-kami/BusinessOverviewSection';
+import QuoteSection from '@/components/tentang-kami/QuoteSection';
 import SkillsSection from '@/components/home/SkillsSection';
-import TeamSection from '@/components/about/TeamSection';
+import TeamSection from '@/components/tentang-kami/TeamSection';
 import WhyChooseUsSection from '@/components/home/WhyChooseUsSection';
 import CTASection from '@/components/ui/CTASection';
 

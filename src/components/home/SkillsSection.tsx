@@ -6,7 +6,7 @@ import ProgressBar from '../ui/ProgressBar'
 const SkillsSection = () => {
   const skills = [
     { label: 'Plafon & Ceiling Design', percentage: 95 },
-    { label: 'Wall Panel & Backdrop', percentage: 98 },
+    { label: 'Wall Moulding & Backdrop', percentage: 98 },
     { label: 'Kitchen Set & Furniture', percentage: 92 },
   ]
 
@@ -28,15 +28,12 @@ const SkillsSection = () => {
               />
             ))}
             
-            <p className="text-white/80 mt-8 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-              SENI RUANG MINIMALIS PEKALONGAN memiliki tim ahli yang berpengalaman dalam bidang desain interior dan konstruksi. Kami berkomitmen menghadirkan kualitas terbaik untuk setiap proyek yang kami kerjakan.
-            </p>
           </div>
           
           {/* Right Column - Image */}
           <div className="mt-[-200px] hidden md:block">
             <div className="relative">
-              <div className="border-[15px] border-white relative animate-fade-in-up aspect-[4/5] md:-mt-32">
+              <div className="border-[15px] border-white relative animate-fade-in-up aspect-[4/5] md:-mt-42">
                 <Image 
                   src="/images/hero/mock-up-poster-in-modern-living-room-interior-design-with-green-empty-wall.jpg"
                   alt="Desain interior minimalis SENI RUANG MINIMALIS PEKALONGAN"

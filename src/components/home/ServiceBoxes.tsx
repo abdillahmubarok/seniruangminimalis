@@ -114,7 +114,7 @@ const ServiceBoxes = () => {
     {
       id: 2,
       icon: 'th-large',
-      title: 'Wall Panel & Backdrop',
+      title: 'Wall Moulding & Backdrop',
       description: 'Solusi desain dinding modern dengan wall moulding, panel gypsum, wallpanel WPC, dan backdrop TV yang menambah nilai estetika ruangan Anda.',
       image: '/images/section/services/backdrop-tv.jpg',
       linkUrl: '/layanan/dinding',

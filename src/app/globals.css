@@ -1,8 +1,14 @@
+/* D:\projek\ikmalplafon\src\app\globals.css */
+
 @import "tailwindcss/preflight";
 @tailwind utilities;
 @import "tailwindcss";
 
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
+/* Base Styles */
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -22,7 +28,12 @@ body {
   @apply mx-auto px-4 max-w-7xl;
 }
 
-/* Animasi untuk Hero Section */
+.section-bg-teamskill {
+  background-color: transparent;
+  background-image: linear-gradient(90deg, #3e8e7e 30%, #FFFFFF 30%);
+}
+
+/* Animation Keyframes */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -34,8 +45,15 @@ body {
   }
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px) skew-x-2;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) skew-x-2;
+  }
 }
 
 @keyframes slow-zoom {
@@ -47,11 +65,111 @@ body {
   }
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-gentle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Animation Classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.6s ease-out forwards;
+}
+
 .animate-slow-zoom {
   animation: slow-zoom 15s ease-in-out infinite alternate;
 }
 
-/* Tailwind Custom Colors */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 7s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 10s ease-in-out infinite;
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 15s linear infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s forwards;
+}
+
+.animate-fadeOut {
+  animation: fadeOut 0.5s forwards;
+}
+
+/* Responsive Animations */
+@media (max-width: 768px) {
+  .animate-fade-in-up {
+    animation-duration: 0.6s;
+  }
+  
+  .animate-fade-in-right {
+    animation-duration: 0.5s;
+  }
+}
+
+/* Custom Components */
+.zigzag-divider {
+  position: relative;
+}
+
+.zigzag-divider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 45%, currentColor 45%, currentColor 55%, transparent 55%);
+  background-size: 10px 10px;
+}
+
+/* Custom Utility Classes */
+/* Note: These might be replaceable with Tailwind config */
 .text-primary {
   color: var(--color-primary);
 }
@@ -96,7 +214,7 @@ body {
   color: var(--color-primary);
 }
 
-/* Transistion classes */
+/* Transistion classes - consider using Tailwind's built-in transition classes */
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -119,149 +237,4 @@ body {
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
-}
-
-/* Font Imports */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
-
-
-/* Tambahkan kode ini ke file CSS global Anda untuk animasi PageHeader */
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(-20px) skew-x-2;
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0) skew-x-2;
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.animate-fade-in-right {
-  animation: fadeInRight 0.6s ease-out forwards;
-}
-
-/* Animasi khusus untuk mobile */
-@media (max-width: 768px) {
-  .animate-fade-in-up {
-    animation-duration: 0.6s;
-  }
-  
-  .animate-fade-in-right {
-    animation-duration: 0.5s;
-  }
-}
-
-
-
-
-
-
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes float-reverse {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
-}
-
-@keyframes float-slow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
-@keyframes pulse-gentle {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
-}
-
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-float-reverse {
-  animation: float-reverse 7s ease-in-out infinite;
-}
-
-.animate-float-slow {
-  animation: float-slow 10s ease-in-out infinite;
-}
-
-.animate-pulse-gentle {
-  animation: pulse-gentle 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-.animate-spin-slow {
-  animation: spin-slow 15s linear infinite;
-}
-
-
-/* Zigzag divider */
-.zigzag-divider {
-  position: relative;
-}
-
-.zigzag-divider::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, transparent 45%, currentColor 45%, currentColor 55%, transparent 55%);
-  background-size: 10px 10px;
-}
-
-/* Animation keyframes for the rotating text */
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@keyframes fadeOut {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.5s forwards;
-}
-
-.animate-fadeOut {
-  animation: fadeOut 0.5s forwards;
-}
-
-/* Animation for the floating elements */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
 }

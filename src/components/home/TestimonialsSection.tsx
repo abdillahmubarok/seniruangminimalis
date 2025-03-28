@@ -23,7 +23,7 @@ const testimonials = [
     id: 2,
     name: 'Dewi Sukmawati',
     title: 'Pemilik Cafe',
-    content: 'Berkat SENI RUANG MINIMALIS PEKALONGAN, cafe saya jadi lebih estetik dan nyaman. Wall panel dan partisi yang dipasang memberikan sentuhan elegan pada ruangan. Konsultasi gratis yang mereka berikan sangat membantu dalam menentukan pilihan desain.',
+    content: 'Berkat SENI RUANG MINIMALIS PEKALONGAN, cafe saya jadi lebih estetik dan nyaman. Wall Moulding dan partisi yang dipasang memberikan sentuhan elegan pada ruangan. Konsultasi gratis yang mereka berikan sangat membantu dalam menentukan pilihan desain.',
     image: '/images/section/testimonials/testi-2.jpg'
   },
   {

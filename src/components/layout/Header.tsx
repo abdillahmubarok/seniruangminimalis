@@ -44,8 +44,8 @@ const Header = () => {
   
   const navItems = [
     { name: 'Beranda', path: '/' },
-    { name: 'Tentang Kami', path: '/about' },
-    { name: 'Layanan', path: '/services' },
+    { name: 'Tentang Kami', path: '/tentang-kami' },
+    { name: 'Layanan', path: '/layanan' },
     { name: 'Portofolio', path: '/portfolio' },
     { name: 'Hubungi Kami', path: '/contact' }
   ]

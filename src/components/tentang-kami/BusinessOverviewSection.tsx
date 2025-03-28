@@ -43,7 +43,7 @@ const BusinessOverviewSection = () => {
                         <AnimatedHeadline 
                             beforeText="Profil"
                             highlightedText="Perusahaan"
-                            rotatingText={["Kami", "Kualitas", "Terbaik"]}
+                            rotatingText={[]}
                             className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
                         />
                         
@@ -74,7 +74,7 @@ const BusinessOverviewSection = () => {
                     >
                         <div className="prose prose-lg">
                             <p className="first-letter:text-5xl first-letter:font-bold first-letter:float-left first-letter:mr-2 first-letter:mt-0 first-letter:text-primary mb-6">
-                                Sebagai spesialis desain interior dan konstruksi, kami menawarkan berbagai layanan pemasangan dan konstruksi untuk melengkapi kebutuhan interior Anda. Mulai dari plafon gypsum dan PVC, wall moulding dinding, wall panel, backdrop TV, kitchen set, hingga partisi.
+                                Sebagai spesialis desain interior dan konstruksi, kami menawarkan berbagai layanan pemasangan dan konstruksi untuk melengkapi kebutuhan interior Anda. Mulai dari plafon gypsum dan PVC, wall moulding dinding, Wall Moulding, backdrop TV, kitchen set, hingga partisi.
                             </p>
                             
                             <p className="mb-6">

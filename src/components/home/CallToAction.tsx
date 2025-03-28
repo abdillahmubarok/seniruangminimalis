@@ -33,7 +33,7 @@ const CallToAction = () => {
               </div>
               <h4 className="text-2xl font-bold mb-4">Layanan Komprehensif</h4>
               <p className="mb-6">
-                Kami menawarkan berbagai solusi interior mulai dari Plafon Gypsum, Wall Panel, 
+                Kami menawarkan berbagai solusi interior mulai dari Plafon Gypsum, Wall Moulding, 
                 Backdrop TV, Kitchen Set, hingga Partisi dengan pilihan model dan warna terlengkap.
               </p>
               <Link 

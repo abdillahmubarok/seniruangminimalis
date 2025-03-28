@@ -3,7 +3,7 @@ import React from 'react'
 import HeroSection from '@/components/home/HeroSection';
 import ServiceBoxes from '@/components/home/ServiceBoxes';
 import AboutSection from '@/components/home/AboutSection';
-import QuoteSection from '@/components/about/QuoteSection'
+import QuoteSection from '@/components/tentang-kami/QuoteSection'
 import SkillsSection from '@/components/home/SkillsSection';
 import WhyChooseUsSection from '@/components/home/WhyChooseUsSection';
 import PortfolioSection from '@/components/home/PortfolioSection';
