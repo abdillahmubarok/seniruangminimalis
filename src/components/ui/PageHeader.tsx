@@ -1,104 +1,140 @@
 // components/ui/PageHeader.tsx
 'use client'
 
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 interface PageHeaderProps {
-  title: string;
-  description?: string;
-  backgroundImage?: string;
-  priority?: boolean;
+    title: string;
+    description?: string;
+    backgroundImage: string;
+    showBreadcrumbs?: boolean;
+    pageHeight?: 'short' | 'medium' | 'tall';
+    alignment?: 'left' | 'center' | 'right';
+    overlay?: 'light' | 'medium' | 'dark';
 }
 
 const PageHeader: React.FC<PageHeaderProps> = ({
-  title,
-  description,
-  backgroundImage = '/images/logo.jpg'
+    title,
+    description,
+    backgroundImage,
+    showBreadcrumbs = true,
+    pageHeight = 'medium',
+    alignment = 'left',
+    overlay = 'medium'
 }) => {
-  const headerRef = useRef<HTMLDivElement>(null)
-  
-  // Efek parallax sederhana ketika scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!headerRef.current) return
-      const scrollPosition = window.scrollY
-      const parallaxValue = scrollPosition * 0.4
-      
-      // Efek parallax pada background
-      const backgroundElement = headerRef.current.querySelector('.bg-image') as HTMLElement
-      if (backgroundElement) {
-        backgroundElement.style.transform = `translateY(${parallaxValue}px)`
-      }
-    }
+    const [scrollY, setScrollY] = useState(0);
+    const [imageLoaded, setImageLoaded] = useState(false);
+
+    // Define height based on pageHeight prop
+    const heightClasses = {
+        short: 'min-h-[40vh]',
+        medium: 'min-h-[50vh] md:min-h-[60vh]',
+        tall: 'min-h-[60vh] md:min-h-[70vh]'
+    };
     
-    window.addEventListener('scroll', handleScroll)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
-  
-  return (
-    <section 
-      ref={headerRef}
-      className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden"
-    >
-      {/* Background Image dengan Parallax Effect */}
-      <div className="absolute inset-0 z-0 bg-image transition-transform duration-300">
-        <Image
-          src={backgroundImage}
-          alt={title}
-          fill={true}
-          style={{ objectFit: 'cover' }}
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-primary/60"></div>
-      </div>
-      
-      {/* Elemen Dekoratif */}
-      <div className="absolute -bottom-6 left-0 right-0 h-12 bg-white transform -skew-y-2 z-10"></div>
-      <div className="absolute -top-4 -left-4 w-24 h-24 border-8 border-amber-400 opacity-20 rounded-full"></div>
-      <div className="absolute top-1/3 right-0 w-40 h-40 border-8 border-amber-400 opacity-10 rounded-full transform -translate-x-1/4 translate-y-1/4"></div>
-      
-      {/* Garis Penanda (Line Accents) */}
-      <div className="absolute left-0 top-0 h-full w-2 bg-amber-400 opacity-80"></div>
-      <div className="hidden md:block absolute right-0 bottom-0 h-2 w-1/4 bg-amber-400 opacity-40"></div>
-      
-      {/* Content */}
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto md:ml-12 lg:ml-24">
-          <div className="bg-white/5 backdrop-blur-sm border-l-4 border-amber-400 pl-6 py-2 pr-3 inline-block mb-4 transform skew-x-2 animate-fade-in-right">
-            <h4 className="text-amber-400 font-medium tracking-wider uppercase text-sm md:text-base">
-              SENI RUANG MINIMALIS
-            </h4>
-          </div>
-          
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in-up leading-tight">
-            {title}
-          </h1>
-          
-          {description && (
-            <div className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-r-lg border-l-4 border-amber-400 max-w-2xl animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-              <p className="text-base md:text-lg text-gray-100">
-                {description}
-              </p>
+    // Define text alignment based on alignment prop
+    const alignmentClasses = {
+        left: 'text-left',
+        center: 'text-center mx-auto',
+        right: 'text-right ml-auto'
+    };
+    
+    // Define overlay opacity based on overlay prop
+    const overlayOpacity = {
+        light: 'opacity-40',
+        medium: 'opacity-60',
+        dark: 'opacity-80'
+    };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollY(window.scrollY);
+        };
+
+        // Add event listener
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        // Remove event listener on cleanup
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    // Calculate parallax effect - limited to prevent issues
+    const parallaxOffset = Math.min(scrollY * 0.2, 100);
+
+    return (
+        <section 
+            className={`relative overflow-hidden ${heightClasses[pageHeight]} flex items-center`}
+            style={{ zIndex: 0 }}
+        >
+            {/* Background Container with Fixed Position */}
+            <div className="absolute inset-0 w-full h-full overflow-hidden">
+                {/* Background Overlay */}
+                <div 
+                    className={`absolute inset-0 bg-black ${overlayOpacity[overlay]} z-10`}
+                ></div>
+                
+                {/* Background Image with Parallax */}
+                <div 
+                    className="absolute inset-0 w-full h-full transform transition-transform duration-200"
+                    style={{ transform: `translateY(${parallaxOffset}px)` }}
+                >
+                    <Image 
+                        src={backgroundImage} 
+                        alt={title}
+                        fill
+                        sizes="100vw"
+                        priority
+                        onLoad={() => setImageLoaded(true)}
+                        className={`object-cover object-center transition-opacity duration-700 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                    />
+                </div>
             </div>
-          )}
-        </div>
-      </div>
-      
-      {/* Mobile Shape Overlay */}
-      <div className="md:hidden absolute bottom-0 left-0 right-0">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full">
-          <path 
-            fill="#ffffff" 
-            fillOpacity="1" 
-            d="M0,192L60,176C120,160,240,128,360,117.3C480,107,600,117,720,144C840,171,960,213,1080,208C1200,203,1320,149,1380,122.7L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-          ></path>
-        </svg>
-      </div>
-    </section>
-  )
+            
+            {/* Content */}
+            <div className="container mx-auto px-4 py-16 relative z-20">
+                <div className={`max-w-3xl ${alignmentClasses[alignment]}`}>
+                    {/* Breadcrumb navigation */}
+                    {showBreadcrumbs && (
+                        <nav className="flex items-center space-x-4 mb-6">
+                            <Link href="/" className="text-white hover:text-secondary transition-colors">
+                                Beranda
+                            </Link>
+                            <i className="fas fa-caret-right text-secondary"></i>
+                            <span className="text-secondary">{title}</span>
+                        </nav>
+                    )}
+                    
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
+                            {title}
+                        </h1>
+                    </motion.div>
+                    
+                    <div className="w-24 h-1 bg-secondary my-6 zigzag-divider"></div>
+                    
+                    {description && (
+                        <motion.p 
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.8, delay: 0.3 }}
+                            className="text-white/90 text-lg"
+                        >
+                            {description}
+                        </motion.p>
+                    )}
+                </div>
+            </div>
+        </section>
+    )
 }
 
 export default PageHeader

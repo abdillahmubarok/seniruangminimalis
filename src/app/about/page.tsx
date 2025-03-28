@@ -1,12 +1,14 @@
 // app/about/page.tsx
-import React from 'react'
-import PageHeader from '@/components/ui/PageHeader'
+import React from 'react';
+import PageHeader from '@/components/ui/PageHeader';
 import AboutSection from '@/components/home/AboutSection';
+import BusinessFeaturesSection from '@/components/about/BusinessFeaturesSection';
+import BusinessOverviewSection from '@/components/about/BusinessOverviewSection';
+import QuoteSection from '@/components/about/QuoteSection';
 import SkillsSection from '@/components/home/SkillsSection';
+import TeamSection from '@/components/about/TeamSection';
 import WhyChooseUsSection from '@/components/home/WhyChooseUsSection';
 import CTASection from '@/components/ui/CTASection';
-
-// Asumsikan Anda memiliki komponen AboutSection
 
 export default function AboutPage() {
     return (
@@ -15,10 +17,13 @@ export default function AboutPage() {
                 title="Tentang Kami"
                 description="Mengenal lebih dekat SENI RUANG MINIMALIS PEKALONGAN, spesialis desain interior dan konstruksi yang berkomitmen menghadirkan karya seni minimalis yang fungsional dan estetik."
                 backgroundImage="/images/pages/about-page.jpg"
-                priority={true}
             />
             <AboutSection />
+            <BusinessFeaturesSection />
+            <BusinessOverviewSection />
+            <QuoteSection />
             <SkillsSection />
+            <TeamSection />
             <WhyChooseUsSection />
             <CTASection
                 title="Siap Mengubah Ruangan Anda?"

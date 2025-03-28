@@ -36,7 +36,7 @@ const SkillsSection = () => {
           {/* Right Column - Image */}
           <div className="mt-[-200px] hidden md:block">
             <div className="relative">
-              <div className="border-[15px] border-white relative h-[500px] w-full animate-fade-in-up">
+              <div className="border-[15px] border-white relative animate-fade-in-up aspect-[4/5] md:-mt-32">
                 <Image 
                   src="/images/hero/mock-up-poster-in-modern-living-room-interior-design-with-green-empty-wall.jpg"
                   alt="Desain interior minimalis SENI RUANG MINIMALIS PEKALONGAN"
