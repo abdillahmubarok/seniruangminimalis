@@ -1,6 +1,6 @@
 # SENI RUANG MINIMALIS PEKALONGAN
 
-![SENI RUANG MINIMALIS PEKALONGAN](https://via.placeholder.com/1200x630/10B981/FFFFFF?text=SENI+RUANG+MINIMALIS+PEKALONGAN)
+![SENI RUANG MINIMALIS PEKALONGAN](https://seniruangminimalis.mubarokah.id/images/og-image.jpg)
 
 Website profesional untuk SENI RUANG MINIMALIS PEKALONGAN, spesialis desain interior dan konstruksi yang berkomitmen menghadirkan karya seni minimalis yang fungsional dan estetik.
 
@@ -91,7 +91,7 @@ seni-ruang-minimalis/
 
 1. Clone repositori:
    ```bash
-   git clone https://github.com/username/seni-ruang-minimalis.git
+   git clone https://github.com/abdillahmubarok/seni-ruang-minimalis.git
    cd seni-ruang-minimalis
    ```
 
@@ -235,7 +235,7 @@ Website ini dioptimasi untuk mencapai skor tinggi di semua metrik Lighthouse:
 
 ## 👏 Kredit
 
-- Website didesain dan dikembangkan oleh [PT MUBAROKAH DIGITAL NUSANTARA](https://mubarokah.com)
+- Website dikembangkan oleh [PT MUBAROKAH DIGITAL NUSANTARA](https://mubarokah.com) dan inspirasi desain diambil dari [EIGTHEME](https://eightheme.com/interia/)
 - Gambar dari [Pexels](https://pexels.com) dan aset bisnis SENI RUANG MINIMALIS PEKALONGAN
 - Ikon dari [Font Awesome](https://fontawesome.com)
 
