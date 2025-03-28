@@ -107,7 +107,7 @@ const ServiceBoxes = () => {
       icon: 'hard-hat',
       title: 'Plafon Minimalis',
       description: 'Layanan pemasangan plafon gypsum dan PVC dengan desain minimalis untuk menciptakan langit-langit yang elegan dan tahan lama.',
-      image: '/images/section/services/plafon.jpg', // Ganti dengan gambar yang sesuai
+      image: '/images/section/services/plafon.jpg',
       linkUrl: '/layanan/plafon',
       isFeature: false
     },
@@ -116,16 +116,16 @@ const ServiceBoxes = () => {
       icon: 'th-large',
       title: 'Wall Panel & Backdrop',
       description: 'Solusi desain dinding modern dengan wall moulding, panel gypsum, wallpanel WPC, dan backdrop TV yang menambah nilai estetika ruangan Anda.',
-      image: '/images/section/services/backdrop-tv.jpg', // Ganti dengan gambar yang sesuai
+      image: '/images/section/services/backdrop-tv.jpg',
       linkUrl: '/layanan/dinding',
       isFeature: true
     },
     {
       id: 3,
       icon: 'couch',
-      title: 'Furniture & Konstruksi',
+      title: 'Furniture & Interior',
       description: 'Pembuatan kitchen set, partisi, background live, dan kanopi dengan desain kustom yang fungsional dan menyesuaikan kebutuhan ruangan Anda.',
-      image: '/images/section/services/kitchen.jpg', // Ganti dengan gambar yang sesuai
+      image: '/images/section/services/kitchen.jpg',
       linkUrl: '/layanan/furniture',
       isFeature: false
     }

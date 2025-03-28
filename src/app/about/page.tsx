@@ -15,6 +15,7 @@ export default function AboutPage() {
                 title="Tentang Kami"
                 description="Mengenal lebih dekat SENI RUANG MINIMALIS PEKALONGAN, spesialis desain interior dan konstruksi yang berkomitmen menghadirkan karya seni minimalis yang fungsional dan estetik."
                 backgroundImage="/images/pages/about-page.jpg"
+                priority={true}
             />
             <AboutSection />
             <SkillsSection />

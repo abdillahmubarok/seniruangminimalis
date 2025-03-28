@@ -180,30 +180,31 @@ const PortfolioSection = () => {
   // Galeri data berdasarkan kategori
   const galleryData: Record<string, Array<{src: string; title: string}>> = {
     'Plafon': [
-      { src: '/images/section/porto/plafon.jpg', title: 'Plafon Gypsum Minimalis' },
-      { src: '/images/section/porto/plafon-2.jpg', title: 'Plafon Ruang Tamu' },
-      { src: '/images/section/porto/plafon-3.jpg', title: 'Plafon PVC Modern' },
-      { src: '/images/section/porto/plafon-4.jpg', title: 'Plafon Kamar Tidur' },
-      { src: '/images/section/porto/plafon-5.jpg', title: 'Plafon Kamar Tidur' },
-      { src: '/images/section/porto/plafon-6.jpg', title: 'Plafon Kamar Tidur' }
+      { src: '/images/section/porto/plafon.jpg', title: 'Plafon Gypsum' },
+      { src: '/images/section/porto/plafon-2.jpg', title: 'Plafon Gypsum' },
+      { src: '/images/section/porto/plafon-3.jpg', title: 'Plafon Gypsum' },
+      { src: '/images/section/porto/plafon-4.jpg', title: 'Plafon Gypsum' },
+      { src: '/images/section/porto/plafon-5.jpg', title: 'Plafon Gypsum' },
+      { src: '/images/section/porto/plafon-6.jpg', title: 'Plafon Gypsum' }
     ],
     'Kitchen Set': [
       { src: '/images/section/porto/kitchen.jpg', title: 'Kitchen Set Minimalis' },
-      { src: '/images/section/porto/kitchen-2.jpg', title: 'Kitchen Set Modern' },
-      { src: '/images/section/porto/kitchen-3.jpg', title: 'Kitchen Set Klasik' },
-      { src: '/images/section/porto/kitchen-4.jpg', title: 'Kitchen Set Industrial' }
+      { src: '/images/section/porto/kitchen-2.jpg', title: 'Kitchen Set Minimalis' },
+      { src: '/images/section/porto/kitchen-3.jpg', title: 'Kitchen Set Minimalis' },
+      { src: '/images/section/porto/kitchen-4.jpg', title: 'KKitchen Set Minimalis' },
+      { src: '/images/section/porto/kitchen-5.jpg', title: 'KKitchen Set Minimalis' }
     ],
-    'Wall Panel': [
-      { src: '/images/section/porto/wall-panel.jpg', title: 'Backdrop TV Minimalis' },
-      { src: '/images/section/porto/wall-panel-2.jpg', title: 'Wall Panel Kamar Utama' },
-      { src: '/images/section/porto/wall-panel-3.jpg', title: 'Accent Wall Ruang Keluarga' },
-      { src: '/images/section/porto/wall-panel-4.jpg', title: 'Dinding Dekoratif' }
+    'Wall Moulding ': [
+      { src: '/images/section/porto/wall-5.jpg', title: 'Wall Moulding' },
+      { src: '/images/section/porto/wall-2.jpg', title: 'Wall Moulding' },
+      { src: '/images/section/porto/wall-3.jpg', title: 'Wall Moulding' },
+      { src: '/images/section/porto/wall-4.jpg', title: 'Wall Moulding' }
     ],
     'Partisi': [
-      { src: '/images/section/porto/multifunction-partition.jpg', title: 'Partisi Ruangan Modern' },
-      { src: '/images/section/porto/partition-2.jpg', title: 'Partisi Minimalis' },
-      { src: '/images/section/porto/partition-3.jpg', title: 'Partisi Ruang Kerja' },
-      { src: '/images/section/porto/partition-4.jpg', title: 'Partisi Multifungsi' }
+      { src: '/images/section/porto/partisi.jpg', title: 'Partisi Penyekat Ruangan' },
+      { src: '/images/section/porto/partisi-2.jpg', title: 'Partisi Penyekat Ruangan' },
+      { src: '/images/section/porto/partisi-3.jpg', title: 'Partisi Penyekat Ruangan' },
+      { src: '/images/section/porto/partisi-4.jpg', title: 'Partisi Penyekat Ruangan' }
     ]
   };
 
@@ -235,25 +236,25 @@ const PortfolioSection = () => {
     },
     {
       type: 'image',
-      image: '/images/section/porto/wall-panel.jpg',
+      image: '/images/section/porto/wall.jpg',
       title: 'Backdrop TV Minimalis',
-      category: 'Wall Panel',
+      category: 'Wall Moulding ',
     },
     {
       type: 'text',
-      title: 'Panel Dinding & Backdrop',
-      category: 'Wall Panel',
-      description: 'Wall panel dan backdrop TV yang memberikan aksen menarik pada dinding ruangan Anda.'
+      title: 'Wall Moulding & Ruang Tamu Modern',
+      category: 'Wall Moulding',
+      description: 'Wall moulding yang memberikan aksen menarik pada dinding ruangan Anda.'
     },
     {
       type: 'image',
-      image: '/images/section/porto/multifunction-partition.jpg',
-      title: 'Partisi Ruangan Modern',
+      image: '/images/section/porto/partisi.jpg',
+      title: 'Partisi Penyekat Ruangan',
       category: 'Partisi',
     },
     {
       type: 'text',
-      title: 'Partisi Multifungsi',
+      title: 'Partisi Penyekat Ruangan',
       category: 'Partisi',
       description: 'Solusi cerdas untuk memisahkan area tanpa mengurangi kesan luas dengan desain partisi yang fungsional.'
     }
