@@ -74,7 +74,7 @@ const WhyChooseUsSection = () => {
                             </div>
                         </motion.div>
                     </div>
-                    
+
                     {/* Right Column - Content */}
                     <div className="md:order-2 lg:order-2">
                         <motion.div
@@ -86,39 +86,43 @@ const WhyChooseUsSection = () => {
                             <span className="text-secondary text-sm font-semibold tracking-wider uppercase block mb-2">
                                 Kenapa Memilih Kami
                             </span>
-                            
-                            <AnimatedHeadline 
+
+                            <AnimatedHeadline
                                 beforeText="Desain Interior"
                                 highlightedText="Rumah yang Lebih Baik"
                                 rotatingText={["Untuk Kehidupan Lebih Baik", "Untuk Kenyamanan Lebih", "Untuk Estetika Ruangan"]}
-                                className="text-3xl md:text-4xl font-bold mb-4" afterText={''}                            />
-                            
-                            <div className="w-24 h-1 bg-secondary mb-10 zigzag-divider"></div>
+                                className="text-3xl md:text-4xl font-bold mb-4" afterText={''} />
+
+                            <div className="w-24 h-1 mb-6">
+                                <svg width="96" height="12" viewBox="0 0 96 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 12L8 0L16 12L24 0L32 12L40 0L48 12L56 0L64 12L72 0L80 12L88 0L96 12" stroke="#FABB51" strokeWidth="2" strokeLinecap="square" />
+                                </svg>
+                            </div>
                         </motion.div>
-                        
+
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <FeatureItem 
+                            <FeatureItem
                                 icon="fa-stopwatch"
                                 title="Layanan Klien Prioritas"
                                 description="Kami memberikan pelayanan prioritas dengan respons cepat untuk semua kebutuhan klien."
                                 delay={0.2}
                             />
-                            
-                            <FeatureItem 
+
+                            <FeatureItem
                                 icon="fa-home"
                                 title="Tim Datang ke Rumah"
                                 description="Tim kami siap melakukan survei langsung ke lokasi untuk memahami kebutuhan spesifik Anda."
                                 delay={0.4}
                             />
-                            
-                            <FeatureItem 
+
+                            <FeatureItem
                                 icon="fa-tags"
                                 title="Diskon Harga"
                                 description="Kami menawarkan penawaran khusus dan diskon menarik untuk berbagai layanan kami."
                                 delay={0.6}
                             />
-                            
-                            <FeatureItem 
+
+                            <FeatureItem
                                 icon="fa-ticket-alt"
                                 title="Revisi Gratis"
                                 description="Kami memberikan jaminan revisi gratis untuk memastikan kepuasan Anda terhadap hasil pekerjaan."

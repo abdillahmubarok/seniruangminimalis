@@ -34,14 +34,14 @@ const PageHeader: React.FC<PageHeaderProps> = ({
         medium: 'min-h-[50vh] md:min-h-[60vh]',
         tall: 'min-h-[60vh] md:min-h-[70vh]'
     };
-    
+
     // Define text alignment based on alignment prop
     const alignmentClasses = {
         left: 'text-left',
         center: 'text-center mx-auto',
         right: 'text-right ml-auto'
     };
-    
+
     // Define overlay opacity based on overlay prop
     const overlayOpacity = {
         light: 'opacity-40',
@@ -67,24 +67,24 @@ const PageHeader: React.FC<PageHeaderProps> = ({
     const parallaxOffset = Math.min(scrollY * 0.2, 100);
 
     return (
-        <section 
+        <section
             className={`relative overflow-hidden ${heightClasses[pageHeight]} flex items-center`}
             style={{ zIndex: 0 }}
         >
             {/* Background Container with Fixed Position */}
             <div className="absolute inset-0 w-full h-full overflow-hidden">
                 {/* Background Overlay */}
-                <div 
+                <div
                     className={`absolute inset-0 bg-black ${overlayOpacity[overlay]} z-10`}
                 ></div>
-                
+
                 {/* Background Image with Parallax */}
-                <div 
+                <div
                     className="absolute inset-0 w-full h-full transform transition-transform duration-200"
                     style={{ transform: `translateY(${parallaxOffset}px)` }}
                 >
-                    <Image 
-                        src={backgroundImage} 
+                    <Image
+                        src={backgroundImage}
                         alt={title}
                         fill
                         sizes="100vw"
@@ -94,7 +94,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
                     />
                 </div>
             </div>
-            
+
             {/* Content */}
             <div className="container mx-auto px-4 py-16 relative z-20">
                 <div className={`max-w-3xl ${alignmentClasses[alignment]}`}>
@@ -108,7 +108,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
                             <span className="text-secondary">{title}</span>
                         </nav>
                     )}
-                    
+
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -118,13 +118,15 @@ const PageHeader: React.FC<PageHeaderProps> = ({
                             {title}
                         </h1>
                     </motion.div>
-                    
-                    <svg width="96" height="12" viewBox="0 0 96 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0 12L8 0L16 12L24 0L32 12L40 0L48 12L56 0L64 12L72 0L80 12L88 0L96 12" stroke="#FABB51" strokeWidth="2" strokeLinecap="square" />
-                            </svg>
-                    
+
+                    <div className="w-24 h-1 mb-6">
+                        <svg width="96" height="12" viewBox="0 0 96 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 12L8 0L16 12L24 0L32 12L40 0L48 12L56 0L64 12L72 0L80 12L88 0L96 12" stroke="#FABB51" strokeWidth="2" strokeLinecap="square" />
+                        </svg>
+                    </div>
+
                     {description && (
-                        <motion.p 
+                        <motion.p
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.3 }}

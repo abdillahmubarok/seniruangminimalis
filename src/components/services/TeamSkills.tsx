@@ -79,9 +79,11 @@ export default function TeamSkills() {
                             Kami
                         </motion.h2>
 
-                        <svg width="96" height="12" viewBox="0 0 96 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div className="w-24 h-1 my-6">
+                            <svg width="96" height="12" viewBox="0 0 96 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0 12L8 0L16 12L24 0L32 12L40 0L48 12L56 0L64 12L72 0L80 12L88 0L96 12" stroke="#FABB51" strokeWidth="2" strokeLinecap="square" />
                             </svg>
+                        </div>
 
                         <p className="text-gray-600 mb-10">
                             Didukung oleh tenaga yang berpengalaman di bidangnya, kami
